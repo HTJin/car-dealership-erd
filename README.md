@@ -11,7 +11,8 @@
     <li>A car brought in for service can be worked on by many mechanics, and each mechanic may work on many cars.</li>
     <li>A car that is serviced may or may not need parts (e.g., adjusting a carburetor or cleaning a fuel injector nozzle does not require providing new parts).</li>
 </ol>
-##### The repository contains:
+
+#### The repository contains:
 ```
 car_dealership_erd.pdf - created on lucidchart
 create_tables.sql - Create database and table
