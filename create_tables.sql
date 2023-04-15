@@ -1,7 +1,9 @@
+CREATE DATABASE car_dealership;
+
 CREATE TABLE Salesperson (
     salesperson_id SERIAL PRIMARY KEY,
     fname VARCHAR(100),
-    lname VARCHAR(100),
+    lname VARCHAR(100)
 );
 
 CREATE TABLE Customer (
@@ -9,7 +11,7 @@ CREATE TABLE Customer (
     fname VARCHAR(100),
     lname VARCHAR(100),
     phone VARCHAR(15),
-    email VARCHAR(50),
+    email VARCHAR(50)
 );
 
 CREATE TABLE Car (
@@ -24,13 +26,13 @@ CREATE TABLE Car (
     FOREIGN KEY (salesperson_id)
         REFERENCES Salesperson(salesperson_id),
     FOREIGN KEY (customer_id)
-        REFERENCES Customer(customer_id) NULL
+        REFERENCES Customer(customer_id)
 );
 
 CREATE TABLE Mechanic (
     mechanic_id SERIAL PRIMARY KEY,
     fname VARCHAR(100),
-    lname VARCHAR(100),
+    lname VARCHAR(100)
 );
 
 CREATE TABLE Record (
@@ -40,7 +42,7 @@ CREATE TABLE Record (
     car_id INTEGER,
     mechanic_id INTEGER,
     FOREIGN KEY (car_id)
-        REFERENCES Car(car_id) NULL,
+        REFERENCES Car(car_id),
     FOREIGN KEY (mechanic_id)
         REFERENCES Mechanic(mechanic_id)
 );
@@ -66,7 +68,7 @@ CREATE TABLE Part (
     part_id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     description VARCHAR(500),
-    price NUMERIC(6,2),
+    price NUMERIC(6,2)
 );
 
 CREATE TABLE Invoice (
@@ -81,7 +83,7 @@ CREATE TABLE Invoice (
     FOREIGN KEY (customer_id)
         REFERENCES Customer(customer_id),
     FOREIGN KEY (car_id)
-        REFERENCES Car(car_id) NULL
+        REFERENCES Car(car_id)
 );
 
 CREATE TABLE Car_Part (

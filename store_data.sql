@@ -50,14 +50,14 @@ VALUES
 
 INSERT INTO invoice
 VALUES
-    (DEFAULT, '2022-01-31', 7856.99*1.07, 2, 1, 1), # <-- probably not a good idea to do calculations for insertions,
-    (DEFAULT, '2016-10-02', 21999*1.07, 3, 2, 4), # but I'm trying it out and seeing if it works
-    (DEFAULT, '2023-04-13', 50104.99*1.07, 4, 4, 2), # 7% sales tax
-    (DEFAULT, '2020-03-15', 45279.99*1.07, 1, 3, 5); # for funsies
+    (DEFAULT, '2022-01-31', 8408.97, 2, 1, 1),
+    (DEFAULT, '2016-10-02', 23519.93, 3, 2, 4),
+    (DEFAULT, '2023-04-13', 53562.34, 4, 4, 2),
+    (DEFAULT, '2020-03-15', 48429.49, 1, 3, 5);
 
 INSERT INTO car_part
 VALUES
     (DEFAULT, 1, 2, 1),
-    (DEFAULT, 1, NULL, 1),
-    (DEFAULT, 3, NULL, 2),
+    (DEFAULT, 1, 1, 1),
+    (DEFAULT, 3, 3, 2),
     (DEFAULT, 4, 3, 4);
