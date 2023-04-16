@@ -68,7 +68,7 @@ BEGIN
     RETURN record_id_pk;
 END;
 $$ LANGUAGE plpgsql;
-SELECT insert_record('2023-04-14', 'Rick Sanchez sold a blue Ford Mustang to Florence Adams, repaired by Rick Sanchez', 5, 5);
+SELECT insert_record('2023-04-14', 'Rick Sanchez sold a blue Ford Mustang to Florence Adams, repaired by Rick Sanchez', 6, 5);
 
 CREATE OR REPLACE FUNCTION insert_ticket (
     ticket_date DATE, ticket_customer_id INTEGER,
@@ -84,7 +84,7 @@ BEGIN
     RETURN ticket_id_pk;
 END;
 $$ LANGUAGE plpgsql;
-SELECT insert_ticket('2023-04-14', 5, 5, 5, 5);
+SELECT insert_ticket('2023-04-14', 5, 6, 5, 5);
 
 CREATE OR REPLACE FUNCTION insert_part (
     part_name VARCHAR, part_description VARCHAR,
@@ -115,7 +115,7 @@ BEGIN
     RETURN invoice_id_pk;
 END;
 $$ LANGUAGE plpgsql;
-SELECT insert_invoice('2023-05-15', 47100.32, 5, 5, 5);
+SELECT insert_invoice('2023-05-15', 47100.32, 5, 5, 6);
 
 CREATE OR REPLACE FUNCTION insert_car_part (
     car_part_car_id INTEGER, car_part_part_id INTEGER,
@@ -130,4 +130,4 @@ BEGIN
     RETURN car_part_id_pk;
 END;
 $$ LANGUAGE plpgsql;
-SELECT insert_car_part(5, 5, 5);
+SELECT insert_car_part(6, 5, 5);
