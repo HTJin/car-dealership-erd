@@ -19,5 +19,5 @@ create_tables.sql - Create database and tables
 store_data.sql - At least 4 pieces/records of data inside of the tables
 insert_functions.sql - At least 3 of inserts from a stored function
 is_serviced_procedure.sql - A procedure to update a purchased vehicle's service boolean
-\*set_car_color_procedure.sql - (bonus) Sets the color of the car based on service record description\*
+***set_car_color_procedure.sql - (bonus) Sets the color of the car based on service record description***
 ```
