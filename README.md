@@ -18,5 +18,5 @@ car_dealership_erd.pdf - Created on lucidchart
 create_tables.sql - Create database and tables
 store_data.sql - At least 4 pieces/records of data inside of the tables
 insert_functions.sql - At least 3 of inserts from a stored function
-is_serviced_procedure - A procedure to update a purchased vehicle's service boolean
+is_serviced_procedure.sql - A procedure to update a purchased vehicle's service boolean
 ```
