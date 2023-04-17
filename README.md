@@ -12,7 +12,7 @@
     <li>A car that is serviced may or may not need parts (e.g., adjusting a carburetor or cleaning a fuel injector nozzle does not require providing new parts).</li>
 </ol>
 
-#### *Recommend to run through the queries in the following order,* This repository contains: 
+#### *Recommend to run through the queries in the following order,* this repository contains: 
 ```
 1) car_dealership_erd.pdf - Created on lucidchart
 2) create_tables.sql - Create database and tables
