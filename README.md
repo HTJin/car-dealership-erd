@@ -12,12 +12,12 @@
     <li>A car that is serviced may or may not need parts (e.g., adjusting a carburetor or cleaning a fuel injector nozzle does not require providing new parts).</li>
 </ol>
 
-#### The repository contains:
+#### The repository contains: *Recommend to run through the queries in the following order*
 ```
-car_dealership_erd.pdf - Created on lucidchart
-create_tables.sql - Create database and tables
-store_data.sql - At least 4 pieces/records of data inside of the tables
-insert_functions.sql - At least 3 of inserts from a stored function
-is_serviced_procedure.sql - A procedure to update a purchased vehicle's service boolean
-set_car_color_procedure.sql - (bonus) Sets the color of the car based on service record description
+1) car_dealership_erd.pdf - Created on lucidchart
+2) create_tables.sql - Create database and tables
+3) store_data.sql - At least 4 pieces/records of data inside of the tables
+4) insert_functions.sql - At least 3 of inserts from a stored function
+5)is_serviced_procedure.sql - A procedure to update a purchased vehicle's service boolean
+6) set_car_color_procedure.sql - (bonus) Sets the color of the car based on service record description
 ```
