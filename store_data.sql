@@ -14,11 +14,25 @@ VALUES
 
 INSERT INTO car
 VALUES
-    (DEFAULT, 'Honda', 'Civic LX', 2011, 7856.99, FALSE, 2, 1),
-    (DEFAULT, 'Mercedes-Benz', 'C-Class C 300', 2023, 50104.99, TRUE, 4, 4),
-    (DEFAULT, 'Porche', '918 Spyder', 2015, 2099994.99, FALSE, 1, NULL),
-    (DEFAULT, 'Toyota', 'Corolla LE', 2020, 21999.99, FALSE, 3, 2),
-    (DEFAULT, 'Audi', 'Q5', 2020, 45279.99, FALSE, 3, 2);
+    (DEFAULT, 'Honda', 'Civic LX', 2011, 7856.99, FALSE, 1),
+    (DEFAULT, 'Mercedes-Benz', 'C-Class C 300', 2023, 50104.99, TRUE, 4),
+    (DEFAULT, 'Porche', '918 Spyder', 2015, 2099994.99, FALSE, NULL),
+    (DEFAULT, 'Toyota', 'Corolla LE', 2020, 21999.99, FALSE, 2),
+    (DEFAULT, 'Audi', 'Q5', 2020, 45279.99, FALSE, 2);
+
+INSERT INTO invoice
+VALUES
+    (DEFAULT, '2022-01-31', 8408.97, 2, 1),
+    (DEFAULT, '2016-10-02', 23519.93, 3, 4),
+    (DEFAULT, '2023-04-13', 53562.34, 4, 2),
+    (DEFAULT, '2020-03-15', 48429.49, 1, 5);
+
+INSERT INTO ticket
+VALUES
+    (DEFAULT, '2016-11-01', 4),
+    (DEFAULT, '2023-01-01', 3),
+    (DEFAULT, '2019-05-25', 1),
+    (DEFAULT, '2022-02-02', 1);
 
 INSERT INTO mechanic
 VALUES
@@ -27,19 +41,26 @@ VALUES
     (DEFAULT, 'Carrol', 'Shane'),
     (DEFAULT, 'Mark', 'Jacobs');
 
-INSERT INTO record
+INSERT INTO ticket_mechanic
 VALUES
-    (DEFAULT, '2022-02-11', 'Ash Winters sold a white Honda Civic LX to Rob Johnson, maintenance by Carrol Shane', 1, 3),
-    (DEFAULT, '2023-01-06', 'Billy Moneybags is trying to sell a black Porche 918 Spyder, maintenance by Carlos Santana', 3, 1),
-    (DEFAULT, '2019-05-25', 'Ash Winters sold a white Honda Civic LX to Rob Johnson, maintenance by Charles Lewis', 1, 2),
-    (DEFAULT, '2016-11-30', 'Larry Jones sold a red Toyota Corolla LE to Danielle Williams, repaired by Carrol Shane', 4, 2);
+    (DEFAULT, 1, 2),
+    (DEFAULT, 2, 1),
+    (DEFAULT, 3, 3),
+    (DEFAULT, 4, 2);
 
-INSERT INTO ticket
+INSERT INTO service
 VALUES
-    (DEFAULT, '2016-11-01', 2, 4, 3, 4),
-    (DEFAULT, '2023-01-01', NULL, 3, 1, 2),
-    (DEFAULT, '2019-05-25', 1, 1, 2, 3),
-    (DEFAULT, '2022-02-02', 1, 1, 3, 1);
+    (DEFAULT, '2022-02-11', 'Ash Winters sold a white Honda Civic LX to Rob Johnson, maintenance by Carrol Shane', 360.98),
+    (DEFAULT, '2023-01-06', 'Billy Moneybags is trying to sell a black Porche 918 Spyder, maintenance by Carlos Santana', 300),
+    (DEFAULT, '2019-05-25', 'Ash Winters sold a white Honda Civic LX to Rob Johnson, maintenance by Charles Lewis', 312.83),
+    (DEFAULT, '2016-11-30', 'Larry Jones sold a red Toyota Corolla LE to Danielle Williams, repaired by Carrol Shane', 764.37);
+
+INSERT INTO ticket_service
+VALUES
+    (DEFAULT, 1, 4),
+    (DEFAULT, 2, 2),
+    (DEFAULT, 3, 3),
+    (DEFAULT, 4, 1);
 
 INSERT INTO part
 VALUES
@@ -48,16 +69,9 @@ VALUES
     (DEFAULT, 'spark plug', 'Ignition system needs this to produce a spark to mix air and fuel in the combustion chamber', 11.99),
     (DEFAULT, 'windshield', 'Laminated safety glass, can be trimmed to fit vehicle', 274.99);
 
-INSERT INTO invoice
-VALUES
-    (DEFAULT, '2022-01-31', 8408.97, 2, 1, 1),
-    (DEFAULT, '2016-10-02', 23519.93, 3, 2, 4),
-    (DEFAULT, '2023-04-13', 53562.34, 4, 4, 2),
-    (DEFAULT, '2020-03-15', 48429.49, 1, 3, 5);
-
 INSERT INTO car_part
 VALUES
-    (DEFAULT, 1, 2, 1),
-    (DEFAULT, 1, 1, 1),
-    (DEFAULT, 3, 3, 2),
-    (DEFAULT, 4, 3, 4);
+    (DEFAULT, 1, 2),
+    (DEFAULT, 1, 1),
+    (DEFAULT, 3, 3),
+    (DEFAULT, 4, 3);

@@ -7,8 +7,8 @@ BEGIN
     UPDATE car
     SET is_serviced = EXISTS (
         SELECT 1
-        FROM record
-        WHERE car.car_id = record.car_id
+        FROM ticket
+        WHERE car.car_id = ticket.car_id
     );
     COMMIT;
 END;

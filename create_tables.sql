@@ -19,14 +19,31 @@ CREATE TABLE Car (
     make VARCHAR(50),
     model VARCHAR(50),
     car_year INTEGER,
-    price NUMERIC(9,2),
+    car_price NUMERIC(9,2),
     is_new BOOLEAN,
-    salesperson_id INTEGER,
     customer_id INTEGER,
-    FOREIGN KEY (salesperson_id)
-        REFERENCES Salesperson(salesperson_id),
     FOREIGN KEY (customer_id)
         REFERENCES Customer(customer_id)
+);
+
+CREATE TABLE Invoice (
+    invoice_id SERIAL PRIMARY KEY,
+    invoice_date DATE,
+    total NUMERIC(9,2),
+    salesperson_id INTEGER,
+    car_id INTEGER,
+    FOREIGN KEY (salesperson_id)
+        REFERENCES Salesperson(salesperson_id),
+    FOREIGN KEY (car_id)
+        REFERENCES Car(car_id)
+);
+
+CREATE TABLE Ticket (
+    ticket_id SERIAL PRIMARY KEY,
+    ticket_date DATE,
+    car_id INTEGER,
+    FOREIGN KEY (car_id)
+        REFERENCES Car(car_id)
 );
 
 CREATE TABLE Mechanic (
@@ -35,66 +52,46 @@ CREATE TABLE Mechanic (
     lname VARCHAR(100)
 );
 
-CREATE TABLE Record (
-    record_id SERIAL PRIMARY KEY,
-    record_date DATE,
-    description VARCHAR(500),
-    car_id INTEGER,
+CREATE TABLE Ticket_Mechanic (
+    tick_mech_id SERIAL PRIMARY KEY,
+    ticket_id INTEGER,
     mechanic_id INTEGER,
-    FOREIGN KEY (car_id)
-        REFERENCES Car(car_id),
+    FOREIGN KEY (ticket_id)
+        REFERENCES Ticket(ticket_id),
     FOREIGN KEY (mechanic_id)
         REFERENCES Mechanic(mechanic_id)
 );
 
-CREATE TABLE Ticket (
-    ticket_id SERIAL PRIMARY KEY,
-    date_created DATE,
-    customer_id INTEGER,
-    car_id INTEGER,
-    mechanic_id INTEGER,
-    record_id INTEGER,
-    FOREIGN KEY (car_id)
-        REFERENCES Car(car_id),
-    FOREIGN KEY (customer_id)
-        REFERENCES Customer(customer_id),
-    FOREIGN KEY (mechanic_id)
-        REFERENCES Mechanic(mechanic_id),
-    FOREIGN KEY (record_id)
-        REFERENCES Record(record_id)
+CREATE TABLE Service (
+    service_id SERIAL PRIMARY KEY,
+    service_date DATE,
+    service_details VARCHAR(500),
+    service_price NUMERIC(8,2)
+);
+
+CREATE TABLE Ticket_Service (
+    tick_serv_id SERIAL PRIMARY KEY,
+    ticket_id INTEGER,
+    service_id INTEGER,
+    FOREIGN KEY (ticket_id)
+        REFERENCES Ticket(ticket_id),
+    FOREIGN KEY (service_id)
+        REFERENCES Service(service_id)
 );
 
 CREATE TABLE Part (
     part_id SERIAL PRIMARY KEY,
     name VARCHAR(100),
-    description VARCHAR(500),
-    price NUMERIC(6,2)
-);
-
-CREATE TABLE Invoice (
-    invoice_id SERIAL PRIMARY KEY,
-    date_created DATE,
-    total NUMERIC(9,2),
-    salesperson_id INTEGER,
-    customer_id INTEGER,
-    car_id INTEGER,
-    FOREIGN KEY (salesperson_id)
-        REFERENCES Salesperson(salesperson_id),
-    FOREIGN KEY (customer_id)
-        REFERENCES Customer(customer_id),
-    FOREIGN KEY (car_id)
-        REFERENCES Car(car_id)
+    part_details VARCHAR(500),
+    part_price NUMERIC(6,2)
 );
 
 CREATE TABLE Car_Part (
     car_part_id SERIAL PRIMARY KEY,
     car_id INTEGER,
     part_id INTEGER,
-    record_id INTEGER,
     FOREIGN KEY (car_id)
         REFERENCES Car(car_id),
     FOREIGN KEY (part_id)
-        REFERENCES Part(part_id),
-    FOREIGN KEY (record_id)
-        REFERENCES Record(record_id)
+        REFERENCES Part(part_id)
 );
